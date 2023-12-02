@@ -39,7 +39,7 @@ public void delete()
 int x=head.data;
 head=head.right;
 head.left=null;
-System.out.println("Elements "+x+" got deleted");
+System.out.println("Deleted element is : "+x);
 }
 
 public void display()
@@ -49,6 +49,7 @@ System.out.println("List is Empty");
 else
 {
 Node ptr=head;
+System.out.print("The datas are : ");
 while(ptr!=null)
 {
 System.out.print(ptr.data+"\t");
@@ -59,37 +60,38 @@ System.out.println();
 }
 }
 
-class doubly
+class DoublyLL
 {
 public static void main(String[]args)
 {
 Linkedlist list =new Linkedlist();
-Scanner sc=new Scanner(System.in);
-String choice="";
-while(!choice.equals("4"))
+Scanner s=new Scanner(System.in);
+String option="";
+while(!option.equals("4"))
 {
-System.out.print(" \t\t\t\t MENU\n 1:Insert at end\n 2:Delete at front\n 3:Display\n 4:exit\n");
-System.out.print("Enter the choice:");
-choice=sc.nextLine();
-switch(choice)
+System.out.print(" \t\tMENU\n\n1: Insertion at end\n2: Deletion at front\n3: Traversal\n");
+System.out.print("Enter the option :");
+option=s.nextLine();
+switch(option)
 {
-case"1":
+case "1":
 System.out.print("Enter the number to insert:");
-int data=sc.nextInt();
-sc.nextLine();
+int data=s.nextInt();
+s.nextLine();
 list.insert(data);
 System.out.println("Data inserted successfully!");
 break;
-case"2":
+case "2":
 list.delete();
 break;
-case"3":
+case "3":
 list.display();
 break;
-case"4":
+case "4":
 break;
 default:
-System.out.println("Invalid");
+System.out.println("Invalid option");
+break;
 }
 }
 }
